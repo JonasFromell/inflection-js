@@ -4,24 +4,20 @@ class Inflection {
     throw 'You\'re trying to instantiate a singleton class'
   }
 
-  static plural = new Map([
-    // Story => Stories
-    [new RegExp('([^aieouy]|qu)y$', 'gi'), '$1ies'],
+  static plural = [
     // Car => Cars
     [new RegExp('$', 'gi'), 's']
-  ])
+  ]
 
-  static singular = new Map([
-    // Stories => Story
-    [new RegExp('([^aieouy]|qu)ies$', 'gi'), '$1y'],
+  static singular = [
     // Cars => Car
     [new RegExp('s$', 'gi'), '']
-  ])
+  ]
 
   static enforce(str, rules) {
-    for (let [k, v] of rules) {
-      if (str.match(k)) {
-        str = str.replace(k, v)
+    for (let i = 0; i < rules.length; ++i) {
+      if (str.match(rules[i][0])) {
+        str = str.replace(rules[i][0], rules[i][1])
         break
       }
     }
