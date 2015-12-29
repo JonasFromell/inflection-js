@@ -6,7 +6,8 @@ import { pluralize } from '../index'
 const tests = new Map([
   ['Car', 'Cars'],
   ['Story', 'Stories'],
-  ['Person', 'People']
+  ['Person', 'People'],
+  ['Man', 'Men']
 ])
 
 for (let [k, v] of tests) {

@@ -6,7 +6,8 @@ import { singularize } from '../index'
 const tests = new Map([
   ['Cars', 'Car'],
   ['Stories', 'Story'],
-  ['People', 'Person']
+  ['People', 'Person'],
+  ['Men', 'Man']
 ])
 
 for (let [k, v] of tests) {
