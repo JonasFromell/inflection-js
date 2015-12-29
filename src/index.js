@@ -22,7 +22,7 @@ class Inflection {
       }
     }
 
-    return new String(str)
+    return '' + str
   }
 
 }

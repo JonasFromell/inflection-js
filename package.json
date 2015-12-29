@@ -4,7 +4,12 @@
   "description": "Lightweight inflection library for JavaScript",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prep": "npm run test && npm run build",
+    "test": "mocha $npm_package_options_mocha",
+    "build": "rm -rf lib/* && babel src --ignore __tests__ --out-dir lib"
+  },
+  "options": {
+    "mocha": "--require scripts/mocha-bootload src/**/__tests__/**/*.js"
   },
   "repository": {
     "type": "git",
