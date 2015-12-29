@@ -3,11 +3,15 @@ import { describe, it } from 'mocha'
 
 import { pluralize } from '../index'
 
-describe('Car => Cars', () => {
-  it('Pluralizes words by adding `s`', () => {
-    let subject = "Car"
-    let expected = "Cars"
+const tests = new Map([
+  ['Car', 'Cars'],
+  ['Story', 'Stories']
+])
 
-    expect(pluralize(subject)).to.eql(expected)
+for (let [k, v] of tests) {
+  describe('Pluralize', () => {
+    it(`turns ${k} into ${v}`, () => {
+      expect(pluralize(k)).to.eql(v)
+    })
   })
-})
+}

@@ -3,11 +3,15 @@ import { describe, it } from 'mocha'
 
 import { singularize } from '../index'
 
-describe('Cars => Car', () => {
-  it('Singularizes by removing `s`', () => {
-    let subject = 'Cars'
-    let expected = 'Car'
+const tests = new Map([
+  ['Cars', 'Car'],
+  ['Stories', 'Story']
+])
 
-    expect(singularize(subject)).to.eql(expected)
+for (let [k, v] of tests) {
+  describe('Singularize', () => {
+    it(`turns ${k} into ${v}`, () => {
+      expect(singularize(k)).to.eql(v)
+    })
   })
-})
+}
