@@ -5,6 +5,8 @@ class Inflection {
   }
 
   static plural = [
+    // Child => Children
+    [new RegExp('(child)$', 'gi'), '$1ren'],
     // Man => Men
     [new RegExp('(m)an$', 'gi'), '$1en'],
     // Person => People
@@ -16,6 +18,8 @@ class Inflection {
   ]
 
   static singular = [
+    // Children => Child
+    [new RegExp('(child)ren$', 'gi'), '$1'],
     // Men => Man
     [new RegExp('(m)en$', 'gi'), '$1an'],
     // People => Person

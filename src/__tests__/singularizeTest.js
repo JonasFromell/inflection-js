@@ -7,7 +7,8 @@ const tests = new Map([
   ['Cars', 'Car'],
   ['Stories', 'Story'],
   ['People', 'Person'],
-  ['Men', 'Man']
+  ['Men', 'Man'],
+  ['Children', 'Child']
 ])
 
 for (let [k, v] of tests) {
