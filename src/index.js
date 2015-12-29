@@ -5,6 +5,7 @@ class Inflection {
   }
 
   static plural = [
+    [new RegExp('(pe)rson$', 'gi'), '$1ople'],
     // Story => Stories
     [new RegExp('([^aeiouy]|qu)y$', 'gi'), '$1ies'],
     // Car => Cars
@@ -12,6 +13,7 @@ class Inflection {
   ]
 
   static singular = [
+    [new RegExp('(pe)ople$', 'gi'), '$1rson'],
     // Stories => Story
     [new RegExp('([^aeiouy]|qu)ies$', 'gi'), '$1y'],
     // Cars => Car
